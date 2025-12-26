@@ -3,80 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheese&Company | 仲間はAI</title>
+    <title>Cheese&Company</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="container">
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="company-name">Cheese&Company</h1>
-                <p class="tagline">仲間はAI</p>
-                <div class="vision-mission">
-                    <div class="vision">
-                        <span class="label">Vision</span>
-                        <p>価値ある商いが続く社会</p>
-                    </div>
-                    <div class="mission">
-                        <span class="label">Mission</span>
-                        <p>多様な価値がテクノロジーとともに育つ仕組みを提供する</p>
-                    </div>
-                </div>
+        <section class="company">
+            <h1>Cheese&Company</h1>
+        </section>
+
+        <section class="vision-mission">
+            <div class="vision">
+                <h2>Vision</h2>
+                <p>価値ある商いが続く社会</p>
+            </div>
+            <div class="mission">
+                <h2>Mission</h2>
+                <p>多様な価値がテクノロジーとともに育つ仕組みを提供する</p>
             </div>
         </section>
 
-        <section class="info-section">
-            <div class="content-grid">
-                <div class="company-info">
-                    <h2>Company</h2>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <dt>会社名</dt>
-                            <dd>チーズアンドカンパニー合同会社</dd>
-                        </div>
-                        <div class="info-item">
-                            <dt>代表</dt>
-                            <dd>本多拳士</dd>
-                        </div>
-                        <div class="info-item">
-                            <dt>所在地</dt>
-                            <dd>東京都港区北青山1-3-3<br>三橋ビル 3階</dd>
-                        </div>
-                    </div>
+        <section class="details">
+            <div class="company-info">
+                <h2>Company</h2>
+                <div class="info">
+                    <p>チーズアンドカンパニー合同会社</p>
+                    <p>代表 本多拳士</p>
+                    <p>東京都港区北青山1-3-3 三橋ビル 3階</p>
                 </div>
-
-                <div class="contact-info">
-                    <h2>Contact</h2>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="subject">件名</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="name">お名前</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-field">
-                            <label for="company">会社名</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        <div class="form-field">
-                            <label for="message">お問い合わせ内容</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">送信</button>
-                    </form>
-                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p><a href="mailto:contact@cheeseandcompany.jp">contact@cheeseandcompany.jp</a></p>
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
 </body>
 </html>

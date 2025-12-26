@@ -1,28 +1,7 @@
 :root {
-    /* SUBTLE MINIMALIST PALETTE */
-    --color-text: #1a1a1a;
+    --color-text: #2a2a2a;
     --color-text-light: #666666;
-    --color-text-lighter: #999999;
-    --color-background: #fefefe;
-    --color-accent: #2a2a2a;
-    --color-border: #e5e5e5;
-    --color-border-light: #f5f5f5;
-    
-    /* TYPOGRAPHY */
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    
-    /* SPACING RHYTHM */
-    --space-xs: 0.5rem;
-    --space-s: 1rem;
-    --space-m: 2rem;
-    --space-l: 4rem;
-    --space-xl: 6rem;
-    --space-xxl: 8rem;
-    
-    /* SUBTLE TRANSITIONS */
-    --transition: all 0.3s ease;
-    --transition-slow: all 0.6s ease;
+    --color-background: #ffffff;
 }
 
 * {
@@ -32,392 +11,147 @@
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.5;
     color: var(--color-text);
     background: var(--color-background);
-    overflow-x: hidden;
-}
-
-/* CONTAINER WITH GENEROUS WHITESPACE */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-m);
-}
-
-/* HERO SECTION - BREATHING SPACE */
-.hero-section {
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero-content {
-    text-align: center;
-    max-width: 800px;
-    animation: fadeInUp 1s ease-out;
-}
-
-/* ELEGANT TYPOGRAPHY */
-.company-name {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: var(--space-s);
-    letter-spacing: -0.02em;
-    position: relative;
-}
-
-.company-name::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 1px;
-    background: var(--color-accent);
-    animation: lineGrow 1s ease-out 0.5s both;
-}
-
-.tagline {
-    font-family: var(--font-sans);
-    font-size: 1.1rem;
     font-weight: 300;
-    color: var(--color-text-light);
-    margin-bottom: var(--space-xl);
-    letter-spacing: 0.05em;
 }
 
-/* VISION & MISSION - SUBTLE ELEGANCE */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/* COMPANY NAME */
+.company {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 400;
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+/* VISION & MISSION */
 .vision-mission {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-l);
-    margin-top: var(--space-xl);
-    opacity: 0;
-    animation: fadeIn 1s ease-out 0.8s both;
+    gap: 80px;
+    margin-bottom: 120px;
 }
 
-.vision,
-.mission {
-    padding: var(--space-m);
-    position: relative;
-}
-
-.vision::before,
-.mission::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--color-border);
-    transition: var(--transition);
-}
-
-.vision:hover::before,
-.mission:hover::before {
-    background: var(--color-accent);
-}
-
-.label {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
+.vision h2,
+.mission h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text-lighter);
+    color: var(--color-text-light);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    display: block;
-    margin-bottom: var(--space-xs);
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
 }
 
 .vision p,
 .mission p {
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    line-height: 1.5;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.4rem;
+    line-height: 1.4;
     color: var(--color-text);
     font-weight: 400;
 }
 
-/* INFO SECTION - HARMONIOUS SPACING */
-.info-section {
-    padding: var(--space-xxl) 0;
-    background: linear-gradient(
-        to bottom,
-        var(--color-background) 0%,
-        var(--color-border-light) 100%
-    );
-}
-
-.content-grid {
+/* DETAILS SECTION */
+.details {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--space-xl);
-    align-items: start;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
 }
 
-/* SECTION HEADINGS */
-h2 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--color-text);
-    margin-bottom: var(--space-m);
-    position: relative;
-    padding-bottom: var(--space-s);
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 1px;
-    background: var(--color-accent);
-}
-
-/* COMPANY INFO - REFINED LIST */
-.info-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-}
-
-.info-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: var(--space-s);
-    align-items: baseline;
-    padding: var(--space-s) 0;
-    border-bottom: 1px solid var(--color-border-light);
-    transition: var(--transition);
-}
-
-.info-item:hover {
-    border-bottom-color: var(--color-border);
-    transform: translateX(2px);
-}
-
-.info-item:last-child {
-    border-bottom: none;
-}
-
-dt {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-text-lighter);
-    text-align: left;
-}
-
-dd {
-    font-size: 1rem;
-    color: var(--color-text);
-    line-height: 1.5;
-}
-
-/* FORM - MINIMAL & FUNCTIONAL */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-}
-
-.form-field {
-    position: relative;
-}
-
-label {
-    display: block;
+.company-info h2,
+.contact-info h2 {
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-text-light);
-    margin-bottom: var(--space-xs);
-    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: var(--space-s);
-    border: 1px solid var(--color-border);
-    border-radius: 0;
-    background: var(--color-background);
-    font-family: var(--font-sans);
+.info p {
     font-size: 1rem;
+    line-height: 1.8;
     color: var(--color-text);
-    transition: var(--transition);
-    outline: none;
+    margin-bottom: 8px;
+    font-weight: 400;
 }
 
-input:focus,
-textarea:focus {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 2px rgba(42, 42, 42, 0.1);
-}
-
-input:focus + label,
-textarea:focus + label,
-.form-field:focus-within label {
-    color: var(--color-accent);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-    max-height: 240px;
-}
-
-/* SUBMIT BUTTON - UNDERSTATED ELEGANCE */
-.submit-button {
-    background: var(--color-text);
-    color: var(--color-background);
-    border: 1px solid var(--color-text);
-    padding: var(--space-s) var(--space-m);
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition);
-    align-self: flex-start;
-    margin-top: var(--space-s);
-    position: relative;
-    overflow: hidden;
-}
-
-.submit-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--color-background);
-    transition: var(--transition-slow);
-    z-index: 0;
-}
-
-.submit-button:hover::before {
-    left: 0;
-}
-
-.submit-button:hover {
+.contact-info p {
+    font-size: 1rem;
+    line-height: 1.8;
     color: var(--color-text);
-    border-color: var(--color-text);
+    font-weight: 400;
 }
 
-.submit-button span {
-    position: relative;
-    z-index: 1;
+.contact-info a {
+    color: var(--color-text);
+    text-decoration: none;
 }
 
-/* SUBTLE ANIMATIONS */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes lineGrow {
-    from { width: 0; }
-    to { width: 60px; }
-}
-
-/* RESPONSIVE DESIGN - PRESERVING ELEGANCE */
+/* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
     .container {
-        padding: 0 var(--space-s);
+        padding: 60px 20px;
     }
     
-    .hero-section {
-        min-height: 60vh;
-        padding: var(--space-l) 0;
-    }
-    
-    .company-name {
-        font-size: clamp(2.5rem, 10vw, 4rem);
+    .company {
+        margin-bottom: 80px;
     }
     
     .vision-mission {
         grid-template-columns: 1fr;
-        gap: var(--space-m);
-        margin-top: var(--space-l);
+        gap: 60px;
+        margin-bottom: 80px;
     }
     
-    .vision,
-    .mission {
-        padding: var(--space-s) var(--space-s) var(--space-s) var(--space-m);
-    }
-    
-    .content-grid {
+    .details {
         grid-template-columns: 1fr;
-        gap: var(--space-l);
+        gap: 60px;
     }
     
-    .info-section {
-        padding: var(--space-l) 0;
-    }
-    
-    .info-item {
-        grid-template-columns: 1fr;
-        gap: var(--space-xs);
-    }
-    
-    dt {
-        font-size: 0.85rem;
+    .vision p,
+    .mission p {
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 480px) {
-    :root {
-        --space-m: 1.5rem;
-        --space-l: 3rem;
-        --space-xl: 4rem;
-        --space-xxl: 5rem;
+    .container {
+        padding: 40px 16px;
     }
     
-    .tagline {
-        font-size: 1rem;
+    .company {
+        margin-bottom: 60px;
+    }
+    
+    .vision-mission {
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+    
+    .details {
+        gap: 40px;
     }
     
     .vision p,
     .mission p {
         font-size: 1.1rem;
-    }
-}
-
-/* PRINT STYLES - MAINTAINING ELEGANCE */
-@media print {
-    body {
-        background: white;
-        color: black;
-    }
-    
-    .hero-section {
-        min-height: auto;
-        padding: 2rem 0;
-    }
-    
-    .vision-mission,
-    .content-grid {
-        break-inside: avoid;
     }
 }
