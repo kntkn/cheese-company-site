@@ -1,7 +1,27 @@
 :root {
-    --color-text: #2a2a2a;
+    /* REFINED COLOR PALETTE */
+    --color-text: #1a1a1a;
     --color-text-light: #666666;
+    --color-text-lighter: #999999;
     --color-background: #ffffff;
+    
+    /* GOLDEN RATIO TYPOGRAPHY SCALE */
+    --font-scale: 1.618;
+    --font-size-xs: 0.75rem;     /* 12px */
+    --font-size-s: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-m: 1.125rem;     /* 18px */
+    --font-size-l: 1.25rem;      /* 20px */
+    --font-size-xl: 1.618rem;    /* ~26px - golden ratio */
+    --font-size-xxl: 2.618rem;   /* ~42px - golden ratio squared */
+    
+    /* REFINED SPACING SYSTEM */
+    --space-xs: 0.5rem;    /* 8px */
+    --space-s: 1rem;       /* 16px */
+    --space-m: 1.5rem;     /* 24px */
+    --space-l: 2.5rem;     /* 40px */
+    --space-xl: 4rem;      /* 64px */
+    --space-xxl: 6.5rem;   /* 104px */
 }
 
 * {
@@ -12,90 +32,93 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
     color: var(--color-text);
     background: var(--color-background);
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: var(--space-xl) var(--space-l);
 }
 
-/* COMPANY NAME */
+/* REFINED COMPANY NAME */
 .company {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: var(--space-xxl);
 }
 
 h1 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(2.25rem, 6vw, var(--font-size-xxl));
     font-weight: 400;
     color: var(--color-text);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
 }
 
-/* VISION & MISSION */
+/* ELEGANT VISION & MISSION */
 .vision-mission {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    margin-bottom: 120px;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xxl);
 }
 
 .vision h2,
 .mission h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: var(--font-size-xs);
     font-weight: 500;
-    color: var(--color-text-light);
+    color: var(--color-text-lighter);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 20px;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-s);
 }
 
 .vision p,
 .mission p {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.4rem;
+    font-size: var(--font-size-xl);
     line-height: 1.4;
     color: var(--color-text);
     font-weight: 400;
 }
 
-/* DETAILS SECTION */
+/* REFINED DETAILS SECTION */
 .details {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 80px;
+    gap: var(--space-xl);
 }
 
 .company-info h2,
 .contact-info h2 {
     font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+    font-size: var(--font-size-xs);
     font-weight: 500;
-    color: var(--color-text-light);
+    color: var(--color-text-lighter);
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    margin-bottom: 30px;
+    letter-spacing: 0.2em;
+    margin-bottom: var(--space-m);
 }
 
 .info p {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: var(--font-size-base);
+    line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: 8px;
+    margin-bottom: var(--space-xs);
     font-weight: 400;
 }
 
 .contact-info p {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: var(--font-size-base);
+    line-height: 1.7;
     color: var(--color-text);
     font-weight: 400;
 }
@@ -103,55 +126,88 @@ h1 {
 .contact-info a {
     color: var(--color-text);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-/* MOBILE RESPONSIVE */
+.contact-info a:hover {
+    color: var(--color-text-light);
+}
+
+/* MOBILE REFINEMENT */
 @media (max-width: 768px) {
     .container {
-        padding: 60px 20px;
+        max-width: 100%;
+        padding: var(--space-l) var(--space-m);
     }
     
     .company {
-        margin-bottom: 80px;
+        margin-bottom: var(--space-xl);
+    }
+    
+    h1 {
+        font-size: clamp(2rem, 8vw, 2.5rem);
     }
     
     .vision-mission {
         grid-template-columns: 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
+        gap: var(--space-l);
+        margin-bottom: var(--space-xl);
     }
     
     .details {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: var(--space-l);
     }
     
     .vision p,
     .mission p {
-        font-size: 1.2rem;
+        font-size: var(--font-size-l);
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 40px 16px;
+        padding: var(--space-m) var(--space-s);
     }
     
     .company {
-        margin-bottom: 60px;
+        margin-bottom: var(--space-l);
     }
     
     .vision-mission {
-        gap: 40px;
-        margin-bottom: 60px;
+        gap: var(--space-m);
+        margin-bottom: var(--space-l);
     }
     
     .details {
-        gap: 40px;
+        gap: var(--space-m);
     }
     
     .vision p,
     .mission p {
-        font-size: 1.1rem;
+        font-size: var(--font-size-m);
+        line-height: 1.5;
+    }
+}
+
+/* PRINT OPTIMIZATION */
+@media print {
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .company {
+        margin-bottom: 2cm;
+    }
+    
+    .vision-mission {
+        margin-bottom: 2cm;
     }
 }
