@@ -6,96 +6,72 @@
     <title>Cheese&Company | 仲間はAI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Clash+Display:wght@200;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="noise-overlay"></div>
-    <div class="cursor-trail"></div>
-    
     <main class="container">
         <section class="hero-section">
-            <div class="hero-bg-elements">
-                <div class="neon-grid"></div>
-                <div class="floating-particles"></div>
-                <div class="glitch-overlay"></div>
-            </div>
-            
             <div class="hero-content">
-                <div class="hero-tagline">
-                    <span class="tagline-en">AI IS OUR TEAMMATE</span>
-                    <span class="tagline-separator">━━━</span>
-                    <span class="tagline-ja">仲間はAI</span>
-                </div>
-                
-                <h1 class="company-title">
-                    <span class="title-part">CHEESE</span>
-                    <span class="title-separator">&</span>
-                    <span class="title-part">COMPANY</span>
-                </h1>
-                
-                <div class="hero-subtitle">
-                    <span class="subtitle-text">FUTURE CORPORATE SOLUTIONS</span>
-                    <div class="subtitle-underline"></div>
+                <h1 class="company-name">Cheese&Company</h1>
+                <p class="tagline">仲間はAI</p>
+                <div class="vision-mission">
+                    <div class="vision">
+                        <span class="label">Vision</span>
+                        <p>価値ある商いが続く社会</p>
+                    </div>
+                    <div class="mission">
+                        <span class="label">Mission</span>
+                        <p>多様な価値がテクノロジーとともに育つ仕組みを提供する</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="info-section">
-            <div class="section-grid">
-                <div class="info-card">
-                    <div class="card-header">
-                        <span class="card-number">01</span>
-                        <h3 class="card-title">CORPORATE PROFILE</h3>
-                        <div class="card-line"></div>
-                    </div>
-                    <div class="card-content">
+            <div class="content-grid">
+                <div class="company-info">
+                    <h2>Company</h2>
+                    <div class="info-list">
                         <div class="info-item">
-                            <span class="info-label">COMPANY</span>
-                            <span class="info-value">チーズアンドカンパニー合同会社</span>
+                            <dt>会社名</dt>
+                            <dd>チーズアンドカンパニー合同会社</dd>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">CEO</span>
-                            <span class="info-value">本多拳士</span>
+                            <dt>代表</dt>
+                            <dd>本多拳士</dd>
                         </div>
                         <div class="info-item">
-                            <span class="info-label">ADDRESS</span>
-                            <span class="info-value">東京都港区北青山1-3-3<br>三橋ビル 3階</span>
+                            <dt>所在地</dt>
+                            <dd>東京都港区北青山1-3-3<br>三橋ビル 3階</dd>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-card">
-                    <div class="card-header">
-                        <span class="card-number">02</span>
-                        <h3 class="card-title">CONTACT INTERFACE</h3>
-                        <div class="card-line"></div>
-                    </div>
+                <div class="contact-info">
+                    <h2>Contact</h2>
                     <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label class="form-label">EMAIL.ADDRESS</label>
-                            <input type="email" name="email" class="form-input" required>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">SUBJECT.MATTER</label>
-                            <input type="text" name="subject" class="form-input" required>
+                        <div class="form-field">
+                            <label for="subject">件名</label>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">USER.NAME</label>
-                            <input type="text" name="name" class="form-input" required>
+                        <div class="form-field">
+                            <label for="name">お名前</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">ORGANIZATION</label>
-                            <input type="text" name="company" class="form-input">
+                        <div class="form-field">
+                            <label for="company">会社名</label>
+                            <input type="text" id="company" name="company">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">MESSAGE.CONTENT</label>
-                            <textarea name="message" class="form-textarea" required></textarea>
+                        <div class="form-field">
+                            <label for="message">お問い合わせ内容</label>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">TRANSMIT</span>
-                            <span class="btn-arrow">→</span>
-                        </button>
+                        <button type="submit" class="submit-button">送信</button>
                     </form>
                 </div>
             </div>
