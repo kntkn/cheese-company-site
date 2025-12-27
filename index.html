@@ -6,7 +6,7 @@
     <title>Cheese&Company</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Noto+Sans+JP:wght@300;400&family=Shippori+Mincho:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,26 +20,89 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-visual">
-            <div class="organic-base"></div>
-            <div class="dot-pattern">
-                <div class="filter-grid"></div>
-                <div class="filter-zone"></div>
-                <div class="shapes-container">
-                    <!-- 一般的な形状（四角に変形される） -->
-                    <div class="shape regular s1"></div>
-                    <div class="shape regular s2"></div>
-                    <div class="shape regular s3"></div>
-                    <div class="shape regular s4"></div>
-                    <div class="shape regular s5"></div>
-                    
-                    <!-- ユニークな形状（形を保持） -->
-                    <div class="shape unique u1"></div>
-                    <div class="shape unique u2"></div>
-                </div>
-            </div>
+            <video class="hero-video" autoplay muted loop playsinline>
+                <!-- プレースホルダー：実際の動画ファイルを追加時はsrc属性を設定 -->
+                <source src="assets/video/hero-background.mp4" type="video/mp4">
+                <source src="assets/video/hero-background.webm" type="video/webm">
+            </video>
+            <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <p class="hero-copy">価値ある商いが続く社会。</p>
+            <h1 class="hero-mission">
+                <span class="mission-line">AIを活用して</span>
+                <span class="mission-line">最新のテクノロジーを</span>
+                <span class="mission-line">社会の隅々に直送する</span>
+            </h1>
+            <div class="scroll-indicator">
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VMV Section -->
+    <section class="vmv">
+        <div class="container">
+            <div class="vmv-intro">
+                <h2 class="vmv-title">Our Philosophy</h2>
+            </div>
+            
+            <div class="vmv-grid">
+                <!-- Vision -->
+                <div class="vmv-item vision">
+                    <div class="vmv-illustration">
+                        <!-- プレースホルダー：ビジョンのイラスト -->
+                        <div class="illustration-placeholder vision-visual"></div>
+                    </div>
+                    <div class="vmv-content">
+                        <h3 class="vmv-label">Vision</h3>
+                        <p class="vmv-text">価値ある商いが続く社会</p>
+                        <p class="vmv-description">持続可能で意味のあるビジネスが継続し、すべての人々にとって価値ある取引が行われる社会の実現を目指します。短期的な利益追求ではなく、長期的な視点で社会に貢献する商いのあり方を追求します。</p>
+                    </div>
+                </div>
+
+                <!-- Mission -->
+                <div class="vmv-item mission">
+                    <div class="vmv-illustration">
+                        <!-- プレースホルダー：ミッションのイラスト -->
+                        <div class="illustration-placeholder mission-visual"></div>
+                    </div>
+                    <div class="vmv-content">
+                        <h3 class="vmv-label">Mission</h3>
+                        <p class="vmv-text">多様な価値がテクノロジーとともに育つ仕組みを提供する</p>
+                        <p class="vmv-description">AIや最新テクノロジーを活用しながら、人間らしい多様性と創造性を大切にし、それぞれの価値が成長し続けられる環境を構築します。効率化と人間性の共存を実現します。</p>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="vmv-values">
+                    <h3 class="values-title">Our Values</h3>
+                    <div class="values-grid">
+                        <div class="value-item direct">
+                            <div class="value-icon">
+                                <div class="icon-placeholder direct-icon"></div>
+                            </div>
+                            <h4 class="value-label">Direct</h4>
+                            <p class="value-description">複雑さを排除し、本質的な価値を直接的に届ける。回り道のない、明確で分かりやすいアプローチで課題解決を図ります。</p>
+                        </div>
+                        
+                        <div class="value-item tailored">
+                            <div class="value-icon">
+                                <div class="icon-placeholder tailored-icon"></div>
+                            </div>
+                            <h4 class="value-label">Tailored</h4>
+                            <p class="value-description">一人ひとりの個性と状況に合わせたオーダーメイドのソリューションを提供。画一的ではない、その人だけのアプローチを大切にします。</p>
+                        </div>
+                        
+                        <div class="value-item lightweight">
+                            <div class="value-icon">
+                                <div class="icon-placeholder lightweight-icon"></div>
+                            </div>
+                            <h4 class="value-label">Lightweight</h4>
+                            <p class="value-description">軽やかで柔軟性があり、変化に対応できる身軽さを維持。重厚な仕組みではなく、しなやかで適応力のある構造を目指します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -49,23 +112,38 @@
             <h2>News</h2>
             <div class="news-list">
                 <article class="news-item">
-                    <time class="news-date">2025.12.27</time>
+                    <div class="news-meta">
+                        <time class="news-date">2025.12.27</time>
+                        <span class="news-category direct">Direct</span>
+                    </div>
                     <h3 class="news-title"><a href="news/2025-12-27-value-creation.html">新しい価値創造への取り組みを開始いたします</a></h3>
                 </article>
                 <article class="news-item">
-                    <time class="news-date">2025.12.15</time>
+                    <div class="news-meta">
+                        <time class="news-date">2025.12.15</time>
+                        <span class="news-category tailored">Tailored</span>
+                    </div>
                     <h3 class="news-title"><a href="news/2025-12-15-company-establishment.html">チーズアンドカンパニー合同会社設立のお知らせ</a></h3>
                 </article>
                 <article class="news-item">
-                    <time class="news-date">2025.12.01</time>
+                    <div class="news-meta">
+                        <time class="news-date">2025.12.01</time>
+                        <span class="news-category lightweight">Lightweight</span>
+                    </div>
                     <h3 class="news-title">代表挨拶：テクノロジーと価値の共存について</h3>
                 </article>
                 <article class="news-item">
-                    <time class="news-date">2025.11.20</time>
+                    <div class="news-meta">
+                        <time class="news-date">2025.11.20</time>
+                        <span class="news-category direct">Direct</span>
+                    </div>
                     <h3 class="news-title">企業理念「価値ある商いが続く社会」の策定</h3>
                 </article>
                 <article class="news-item">
-                    <time class="news-date">2025.11.10</time>
+                    <div class="news-meta">
+                        <time class="news-date">2025.11.10</time>
+                        <span class="news-category tailored">Tailored</span>
+                    </div>
                     <h3 class="news-title">新オフィス開設準備について</h3>
                 </article>
             </div>
