@@ -314,14 +314,17 @@ body {
 /* Mission Title Break Control */
 @media (max-width: 768px) {
     .mission-title {
-        font-size: clamp(1.125rem, 4.5vw, 1.5rem);
-        line-height: 1.6;
-        word-break: keep-all;
-        margin-bottom: var(--space-m);
+        font-size: 18px !important;
+        line-height: 1.6 !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .mission-title br {
-        display: none;
+        display: none !important;
     }
 }
 
@@ -784,11 +787,13 @@ body {
     }
     
     .hero-mission {
-        font-size: clamp(1.5rem, 6vw, 2.2rem);
-        line-height: 1.6;
-        text-align: center;
-        word-break: keep-all;
-        overflow-wrap: break-word;
+        font-size: 24px !important;
+        line-height: 1.6 !important;
+        text-align: center !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .sp-only {
@@ -836,11 +841,14 @@ body {
     }
     
     .vmv-title {
-        font-size: clamp(1.25rem, 5vw, 1.75rem);
-        line-height: 1.5;
-        margin-bottom: var(--space-m);
-        word-break: keep-all;
-        text-align: left;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 16px !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
     }
     
     .vmv-description {
@@ -861,13 +869,15 @@ body {
     }
     
     .value-item {
-        width: 100%;
-        max-width: 100%;
-        padding: var(--space-l) var(--space-m);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 24px 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        border-bottom: 1px solid rgba(224, 224, 224, 0.3) !important;
+        margin-bottom: 24px !important;
     }
     
     .value-header {
@@ -885,22 +895,29 @@ body {
     }
     
     .value-title {
-        font-size: 1rem;
-        line-height: 1.5;
-        margin: 0;
-        word-break: keep-all;
+        font-size: 16px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
     }
     
     .value-definition {
-        font-size: 0.9375rem;
-        line-height: 1.5;
-        margin-bottom: var(--space-s);
-        word-break: keep-all;
+        font-size: 15px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 8px !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
     }
     
     .value-description {
-        font-size: 0.8125rem;
-        line-height: 1.8;
+        font-size: 13px !important;
+        line-height: 1.8 !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
     }
     
     /* News Section */
@@ -942,9 +959,12 @@ body {
     }
     
     .news-title {
-        font-size: 0.875rem;
-        line-height: 1.6;
-        margin-top: var(--space-xs);
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        margin-top: 4px !important;
+        word-break: keep-all !important;
+        overflow-wrap: break-word !important;
+        width: 100% !important;
     }
     
     .news-more {
@@ -968,11 +988,14 @@ body {
     }
     
     .email-link {
-        font-size: clamp(0.875rem, 4.5vw, 1.25rem);
-        word-break: break-all;
-        display: inline-block;
-        max-width: 100%;
-        hyphens: auto;
+        font-size: 14px !important;
+        word-break: break-all !important;
+        overflow-wrap: break-word !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        hyphens: auto !important;
+        line-height: 1.4 !important;
     }
     
     /* Footer Section */
@@ -996,23 +1019,6 @@ body {
         font-size: 0.6875rem;
     }
     
-    /* Common Typography & Spacing */
-    :root {
-        --font-size-xs: 0.6875rem;    /* 11px */
-        --font-size-s: 0.8125rem;     /* 13px */
-        --font-size-m: 0.875rem;      /* 14px */
-        --font-size-l: 1rem;          /* 16px */
-        --font-size-xl: 1.25rem;      /* 20px */
-        --font-size-2xl: 1.5rem;      /* 24px */
-        --font-size-3xl: 1.75rem;     /* 28px */
-        
-        --space-xs: 0.25rem;    /* 4px */
-        --space-s: 0.5rem;      /* 8px */
-        --space-m: 1rem;        /* 16px */
-        --space-l: 1.5rem;      /* 24px */
-        --space-xl: 2.5rem;     /* 40px */
-        --space-2xl: 3.75rem;   /* 60px */
-    }
     
     body {
         font-size: var(--font-size-m);
