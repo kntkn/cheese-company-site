@@ -113,29 +113,192 @@ body {
     75% { background-position: 0% 100%; }
 }
 
-/* 点描ノイズパターン */
+/* 均一化フィルター アニメーション */
 .dot-pattern {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0.03;
-    background-image: 
-        radial-gradient(circle at 20% 30%, var(--color-text) 1px, transparent 1px),
-        radial-gradient(circle at 70% 60%, var(--color-text) 1px, transparent 1px),
-        radial-gradient(circle at 45% 80%, var(--color-text) 1px, transparent 1px),
-        radial-gradient(circle at 85% 20%, var(--color-text) 1px, transparent 1px),
-        radial-gradient(circle at 10% 70%, var(--color-text) 1px, transparent 1px),
-        radial-gradient(circle at 60% 40%, var(--color-text) 1px, transparent 1px);
-    background-size: 180px 180px, 220px 220px, 160px 160px, 240px 240px, 200px 200px, 190px 190px;
-    background-position: 0 0, 30px 30px, 60px 10px, 10px 60px, 80px 80px, 40px 50px;
-    animation: dotFlow 30s linear infinite;
+    overflow: hidden;
 }
 
-@keyframes dotFlow {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(20px, 20px); }
+/* フィルター格子 */
+.filter-grid {
+    position: absolute;
+    top: -10%;
+    left: -20%;
+    right: -20%;
+    bottom: -10%;
+    background-image: 
+        linear-gradient(90deg, rgba(26, 26, 26, 0.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(26, 26, 26, 0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridMove 6s linear infinite;
+    z-index: 2;
+}
+
+@keyframes gridMove {
+    0% { transform: translateX(-60px); }
+    100% { transform: translateX(0px); }
+}
+
+/* 形状コンテナ */
+.shapes-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* 一般的な形状（四角に変形される） */
+.shape {
+    position: absolute;
+    animation: shapeFlow 6s linear infinite;
+}
+
+.shape.regular {
+    width: 24px;
+    height: 24px;
+    background: rgba(45, 90, 74, 0.3);
+    border-radius: 50%;
+}
+
+.shape.regular.s1 { top: 20%; left: -60px; animation-delay: 0s; }
+.shape.regular.s2 { top: 35%; left: -60px; animation-delay: 0.8s; }
+.shape.regular.s3 { top: 50%; left: -60px; animation-delay: 1.6s; }
+.shape.regular.s4 { top: 65%; left: -60px; animation-delay: 2.4s; }
+.shape.regular.s5 { top: 80%; left: -60px; animation-delay: 3.2s; }
+
+@keyframes shapeFlow {
+    0% { 
+        transform: translateX(0) scale(1);
+        border-radius: 50%;
+        opacity: 0.3;
+    }
+    15% { 
+        opacity: 0.4;
+    }
+    45% { 
+        transform: translateX(50vw) scale(1);
+        border-radius: 50%;
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translateX(50vw) scale(1.1);
+        border-radius: 2px;
+        opacity: 0.5;
+    }
+    55% { 
+        transform: translateX(50vw) scale(1);
+        border-radius: 2px;
+        opacity: 0.3;
+    }
+    85% { 
+        transform: translateX(120vw) scale(1);
+        border-radius: 2px;
+        opacity: 0.3;
+    }
+    100% { 
+        transform: translateX(120vw) scale(1);
+        border-radius: 2px;
+        opacity: 0;
+    }
+}
+
+/* ユニークな形状（形を保持） */
+.shape.unique {
+    width: 28px;
+    height: 28px;
+    background: rgba(45, 90, 74, 0.5);
+    border-radius: 2px 8px 2px 8px;
+    position: relative;
+}
+
+.shape.unique::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid rgba(45, 90, 74, 0.3);
+    border-radius: 4px 10px 4px 10px;
+    animation: uniqueGlow 6s linear infinite;
+}
+
+.shape.unique.u1 { top: 25%; left: -60px; animation-delay: 1.2s; }
+.shape.unique.u2 { top: 60%; left: -60px; animation-delay: 4.0s; }
+
+@keyframes uniqueFlow {
+    0% { 
+        transform: translateX(0) scale(1);
+        opacity: 0.4;
+    }
+    15% { 
+        opacity: 0.6;
+    }
+    45% { 
+        transform: translateX(50vw) scale(1);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateX(50vw) scale(1.05);
+        opacity: 0.7;
+    }
+    55% { 
+        transform: translateX(50vw) scale(1);
+        opacity: 0.6;
+    }
+    85% { 
+        transform: translateX(120vw) scale(1);
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translateX(120vw) scale(1);
+        opacity: 0;
+    }
+}
+
+.shape.unique {
+    animation: uniqueFlow 6s linear infinite;
+}
+
+@keyframes uniqueGlow {
+    0%, 100% { 
+        opacity: 0;
+        transform: scale(1);
+    }
+    45%, 55% { 
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* フィルター効果の視覚化 */
+.filter-zone {
+    position: absolute;
+    top: 0;
+    left: 48%;
+    right: 48%;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(45, 90, 74, 0.02) 20%,
+        rgba(45, 90, 74, 0.04) 50%,
+        rgba(45, 90, 74, 0.02) 80%,
+        transparent 100%
+    );
+    z-index: 3;
+    animation: filterPulse 6s ease-in-out infinite;
+}
+
+@keyframes filterPulse {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 .hero-content {
