@@ -220,37 +220,37 @@ body {
 
 /* VISION SECTION */
 .vision {
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
     background: var(--color-background);
 }
 
 @media (min-width: 768px) {
     .vision {
-        padding: 160px 0;
+        padding: 160px 0 100px 0;
     }
 }
 
 /* MISSION SECTION */
 .mission {
-    padding: 80px 0;
+    padding: 60px 0;
     background: var(--color-background);
 }
 
 @media (min-width: 768px) {
     .mission {
-        padding: 160px 0;
+        padding: 100px 0 120px 0;
     }
 }
 
 /* VALUES SECTION */
 .values {
-    padding: 80px 0;
+    padding: 60px 0 80px 0;
     background: var(--color-background);
 }
 
 @media (min-width: 768px) {
     .values {
-        padding: 160px 0;
+        padding: 100px 0 160px 0;
     }
 }
 
@@ -297,10 +297,21 @@ body {
     height: 300px;
 }
 
+/* Mission Title Break Control */
+.mission-title br {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .mission-title br {
+        display: none;
+    }
+}
+
 /* VMV SVG Illustrations */
 .vmv-svg {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
 }
 
 .vmv-illustration {
@@ -372,10 +383,10 @@ body {
 .direct-icon::before {
     content: '';
     position: absolute;
-    width: 60%;
-    height: 2px;
+    width: 70%;
+    height: 3px;
     background: var(--color-direct);
-    left: 20%;
+    left: 15%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -383,11 +394,11 @@ body {
 .direct-icon::after {
     content: '';
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     background: var(--color-direct);
     border-radius: 50%;
-    right: 18%;
+    right: 13%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -395,10 +406,10 @@ body {
 .tailored-icon::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--color-tailored);
-    border-radius: 2px;
+    width: 26px;
+    height: 26px;
+    border: 2.5px solid var(--color-tailored);
+    border-radius: 3px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -407,9 +418,9 @@ body {
 .tailored-icon::after {
     content: '';
     position: absolute;
-    width: 14px;
-    height: 14px;
-    border: 1.5px solid var(--color-tailored);
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-tailored);
     border-radius: 2px;
     left: 50%;
     top: 50%;
@@ -420,8 +431,8 @@ body {
 .lightweight-icon::before {
     content: '';
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 12px;
+    height: 12px;
     background: var(--color-lightweight);
     border-radius: 50%;
     left: 50%;
@@ -432,8 +443,8 @@ body {
 .lightweight-icon::after {
     content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
+    width: 6px;
+    height: 6px;
     background: var(--color-lightweight);
     border-radius: 50%;
     left: 65%;
@@ -585,11 +596,16 @@ body {
     font-size: var(--font-size-s);
     color: var(--color-text-lighter);
     text-decoration: none;
-    transition: color 0.2s ease;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: var(--space-xs) var(--space-s);
+    border-radius: 4px;
 }
 
 .news-all-link:hover {
     color: var(--color-direct);
+    background-color: rgba(44, 62, 123, 0.05);
+    transform: translateX(4px);
 }
 
 /* COMPANY SECTION */
@@ -761,8 +777,8 @@ body {
     }
     
     .vmv-svg {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
     
     .vmv-illustration {
